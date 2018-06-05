@@ -2,7 +2,7 @@
 # Nightwatch.js Dockerfile
 #
 
-FROM alpine:3.7
+FROM alpine-java:3.7
 
 RUN apk --no-cache add \
     # Install NodeJS:
@@ -16,12 +16,6 @@ RUN apk --no-cache add \
   && rm -rf \
     /tmp/* \
     /root/.npm
-    
-RUN add-apt-repository ppa:webupd8team/java
-RUN apt-get update
-RUN echo debconf shared/accepted-oracle-license-v1-1 select true | debconf-set-selections
-RUN echo debconf shared/accepted-oracle-license-v1-1 seen true | debconf-set-selections
-RUN apt-get install -y oracle-java9-installer
 
 # Add node system user/group with uid/gid 1000.
 # This is a workaround for boot2docker issue #581, see
