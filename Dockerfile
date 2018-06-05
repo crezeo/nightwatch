@@ -17,8 +17,8 @@ RUN apk --no-cache add \
     /tmp/* \
     /root/.npm
     
-RUN sudo apt-get update
-RUN sudo apt-get install default-jre
+RUN apt-get update
+RUN apt-get install default-jre
 
 # Add node system user/group with uid/gid 1000.
 # This is a workaround for boot2docker issue #581, see
