@@ -17,9 +17,8 @@ RUN apk --no-cache add \
     /tmp/* \
     /root/.npm
     
-RUN echo "deb http://http.debian.net/debian jessie-backports main" | tee --append /etc/apt/sources.list
 RUN sudo apt-get update
-RUN sudo apt-get install -t jessie-backports openjdk-8-jdk
+RUN sudo apt-get install default-jre
 
 # Add node system user/group with uid/gid 1000.
 # This is a workaround for boot2docker issue #581, see
