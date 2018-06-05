@@ -2,7 +2,7 @@
 # Nightwatch.js Dockerfile
 #
 
-FROM alpine-java:3.7
+FROM alpine-java:latest
 
 RUN apk --no-cache add \
     # Install NodeJS:
